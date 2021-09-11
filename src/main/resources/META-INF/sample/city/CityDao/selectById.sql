@@ -1,1 +1,0 @@
-select /*%expand*/* from city where id = /* id */0
