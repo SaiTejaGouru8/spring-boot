@@ -37,7 +37,11 @@ node(){
     }
     
     stage("deploy"){
-        
+        bat """
+
+         Xcopy "build/libs/spring-boot-${env.BUILD_NUMBER}" "C:\\xampp\\Tomcat\\webapps\\"
+
+        """
     }
     
 }
