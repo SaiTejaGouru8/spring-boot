@@ -15,7 +15,7 @@ plugins {
 
 
 group='com.spring-boot'
-version = '1.0'
+version = System.getenv('BUILD_NUMBER')
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
