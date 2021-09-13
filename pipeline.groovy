@@ -38,8 +38,8 @@ node(){
     
     stage("deploy"){
         bat """
-         curl "http://localhost:8888/repository/maven-public/com/spring-boot/spring-boot/${env.BUILD_NUMBER}/spring-boot-${env.BUILD_NUMBER}.jar" --output spring-boot.jar
-         Xcopy "spring-boot.jar" "C:\\xampp\\Tomcat\\webapps\\"
+         curl "http://localhost:8888/repository/maven-public/com/spring-boot/spring-boot/${env.BUILD_NUMBER}/spring-boot-${env.BUILD_NUMBER}.war" --output spring-boot.war
+         Xcopy "spring-boot.war" "C:\\xampp\\Tomcat\\webapps\\"
 
         """
     }

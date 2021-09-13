@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.4.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'war'
     id 'idea'
     id 'eclipse'
     id 'jacoco'
@@ -41,6 +42,7 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
     implementation 'joda-time:joda-time:2.10.6'
     implementation 'org.xerial:sqlite-jdbc:3.34.0'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -81,8 +83,8 @@ sonarqube {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact("build/libs/spring-boot-$version" + ".jar") {
-                extension 'jar'
+            artifact("build/libs/spring-boot-$version" + ".war") {
+                extension 'war'
             }
         }
     }
